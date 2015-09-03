@@ -31,7 +31,7 @@ function BootMainFactors = BootstrapMainFactors(ParametersValues,Clustering,NbDr
         for  j = 1:nbclusters
             boot = zeros(NbDraw,1);
             for iter = 1:NbDraw
-                x_redraw = randsample(size(ParametersValues,1),Clustering.weights(j),1)';  % sample points
+                x_redraw = randsample(size(ParametersValues,1),Clustering.weights(j),0)';  % sample points
                 q = quantile(ParametersValues(x_redraw,i),(1:1:99)./100);  % bootstrapped distribution
                 boot(iter) = norm(q_prior-q,1); % L1-norm
             end
