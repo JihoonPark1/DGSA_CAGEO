@@ -59,7 +59,7 @@ for j = 1:NbClusters
                     ParametersValuesi = ParametersValues(:,i);
                     x_redraw = zeros(length(idx_cl),NbDraw);
                     for iter = 1:NbDraw
-                        x_redraw(:,iter) = ParametersValuesi(idx_c(randsample(Clustering.weights(j),length(idx_cl),1)));  % sample points
+                        x_redraw(:,iter) = ParametersValuesi(idx_c(randsample(Clustering.weights(j),length(idx_cl),0)));  % sample points
                     end
             
                     %x_redraw = reshape(ParametersValuesi(idx_c(randsample(Clustering.weights(j),length(idx_cl)*NbDraw,'true'))),[],NbDraw);  % sample points
